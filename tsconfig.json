@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"experimentalDecorators": true,
+		"noImplicitAny": true,
+		"outDir": "build",
+		"sourceMap": true
+	},
+	"include": [
+		"platform6/**/*.ts",
+		"src/**/*.ts"
+	]
+}
