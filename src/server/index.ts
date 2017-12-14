@@ -1,11 +1,31 @@
-import Service from '../platform6/service'
+import Service from '../../platform6/service'
 
 import * as express from 'express'
+import * as fs from 'fs'
 
 const app = express()
 
 app.get('/apis/v.1.0.0/demo.typescript/portal', function (request, response) {
-	response.send('Hello World');
+	const servicePortal = {
+		script: fs.readFileSync('src/client/bundle/ServiceConfiguration.bundle.js', 'utf8'),
+		data: {
+			scripts: [
+				{
+					'name': 'Script 1',
+					'appKey': 'Platform 6'
+				},
+				{
+					'name': 'Script 2',
+					'appKey': 'Ondiflo'
+				}
+			]
+		}
+	}
+
+	response.json(servicePortal)
+	response.status(200)
+
+	response.send(response);
 })
 
 app.listen(8000, () => {

@@ -6,7 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
 	entry: {
-		bundle: './src/index.ts'
+		bundle: './src/server/index.ts'
 	},
 	output: {
 		path: path.resolve(__dirname, './build'),

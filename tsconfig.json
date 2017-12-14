@@ -9,6 +9,6 @@
 	},
 	"include": [
 		"platform6/**/*.ts",
-		"src/**/*.ts"
+		"src/server/**/*.ts"
 	]
 }

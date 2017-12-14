@@ -1,0 +1,12 @@
+{
+	"scripts": [
+		{
+			"name": "Script 1",
+			"appKey": "Platform 6"
+		},
+		{
+			"name": "Script 2",
+			"appKey": "Ondiflo"
+		}
+	]
+}

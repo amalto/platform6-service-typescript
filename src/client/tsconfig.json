@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "outDir": "./generated",
+        "jsx": "react",
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "lib": [
+			"dom",
+			"es5",
+			"es6",
+			"es7",
+			"es2017"
+        ]
+    },
+    "include": [
+		"core/**/*",
+        "typings/**/*"
+    ]
+}
