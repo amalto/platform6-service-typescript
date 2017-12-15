@@ -22,6 +22,12 @@ declare namespace Service {
 		uiVersion: string
 		ui: UIJsonBuilder
 	}
+
+	export interface CallParameters {
+		username: string
+		receiverId: string
+		action: string
+	}
 }
 
 export default class Service {
@@ -38,7 +44,7 @@ export default class Service {
 		const { SERVICE_MANAGER_ID } = Constants
 
 		const commonMessage = await BusConnection.createCommonMessage(this.idKey, [
-			BusConnection.createHeader(SERVICE_MANAGER_ID, Constants.USER_KEY, parameters.username),
+			BusConnection.createHeader(null, Constants.USER_KEY, parameters.username),
 			BusConnection.createHeader(SERVICE_MANAGER_ID, 'action', 'deploy'),
 			BusConnection.createHeader(SERVICE_MANAGER_ID, 'service.id', parameters.id),
 			BusConnection.createHeader(SERVICE_MANAGER_ID, 'node.id', uuid()),
@@ -67,7 +73,26 @@ export default class Service {
 		BusConnection.displayCommonMessage('Response', response)
 	}
 
-	public async sendCommonMessage(receiverId: string, commonMessage: CommonMessage) {
+	public async callService(parameters: Service.CallParameters): Promise<CommonMessage> {
+		const { receiverId } = parameters
+
+		const commonMessage = await BusConnection.createCommonMessage(this.idKey, [
+			BusConnection.createHeader(null, Constants.USER_KEY, parameters.username),
+			BusConnection.createHeader(receiverId, 'action', parameters.action)
+		], [])
+
+		if (!commonMessage) {
+			throw new Error(`Unable to create the common message ${commonMessage.id}`)
+		}
+
+		const response = await this.sendCommonMessage(receiverId, commonMessage)
+
+		BusConnection.displayCommonMessage('Response', response)
+
+		return response
+	}
+
+	public async sendCommonMessage(receiverId: string, commonMessage: CommonMessage): Promise<CommonMessage> {
 		const hazelcastClient = this.client
 		const receiverIdKey = 'cmb.' + receiverId
 		const request = hazelcastClient.getQueue<CommonMessage>(receiverIdKey)

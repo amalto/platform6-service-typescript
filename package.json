@@ -17,7 +17,7 @@
     "private": true,
     "scripts": {
         "build": "webpack --config webpack.config.js",
-		"dev": "npm run build && node build/bundle.js"
+        "dev": "npm run build && node build/bundle.js"
     },
     "dependencies": {
         "express": "^4.16.2",

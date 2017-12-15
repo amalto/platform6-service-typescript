@@ -36,10 +36,12 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 			{
 				id: 'appKey',
 				label: 'Application key',
+				width: 300
 			},
 			{
 				id: 'name',
 				label: 'Name',
+				width: 700
 			}
 		]
 	}
@@ -65,7 +67,8 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 			{
 				columnId: 'name',
 				cssClass: 'dg-item-data-value multiline',
-				displayValue: script.name
+				displayValue: script.name,
+				readOnly: true
 			}
 		]
 	}
