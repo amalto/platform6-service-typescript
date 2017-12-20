@@ -21,6 +21,7 @@
         "dev": "npm run build && DEBUG=platform6:* node build/bundle.js"
     },
     "dependencies": {
+        "@platform6/platform6-client": "0.0.1-alpha.3",
         "express": "^4.16.2"
     },
     "devDependencies": {
