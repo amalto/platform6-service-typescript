@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"target": "esnext",
 		"module": "commonjs",
 		"experimentalDecorators": true,
 		"noImplicitAny": true,
@@ -8,7 +8,6 @@
 		"sourceMap": true
 	},
 	"include": [
-		"platform6/**/*.ts",
 		"src/server/**/*.ts"
 	]
 }

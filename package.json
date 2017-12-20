@@ -5,7 +5,7 @@
     "main": "src/server.ts",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://bitbucket.org/amalto/dev-service-typescript"
     },
     "author": "Amalto Technologies",
     "contributors": [
@@ -16,21 +16,16 @@
     ],
     "private": true,
     "scripts": {
+        "setup": "npm i && npm link platform6-client",
         "build": "webpack --config webpack.config.js",
-        "dev": "npm run build && node build/bundle.js"
+        "dev": "npm run build && DEBUG=platform6:* node build/bundle.js",
     },
     "dependencies": {
-        "express": "^4.16.2",
-        "hazelcast-client": "^0.6.2",
-        "protobufjs": "^6.8.3",
-        "uuid": "^3.1.0"
+        "express": "^4.16.2"
     },
     "devDependencies": {
-        "@types/bluebird": "^3.5.18",
         "@types/express": "^4.0.39",
-        "@types/long": "^3.0.32",
         "@types/node": "^8.0.57",
-        "@types/uuid": "^3.4.3",
         "ts-loader": "^3.2.0",
         "typescript": "^2.6.2",
         "uglifyjs-webpack-plugin": "^1.1.3",

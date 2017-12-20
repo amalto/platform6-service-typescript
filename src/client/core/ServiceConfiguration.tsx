@@ -25,6 +25,7 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 			<h4 className="mgb-15 mgt-15">Hello ! I am a service developed in TypeScript.</h4>
 			<p className="mgb-15 mgt-15">For now, I can retrieve the list of items in the Platform6.Scripts service.</p>
 			<DataGrid
+				dataGridId='demo.typescript_datagrid'
 				columnHeaders={this.getColumns()}
 				dataLines={this.renderDataLines(this.props.data.scripts)}
 				noItemsMsg='No scripts founded' />

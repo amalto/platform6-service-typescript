@@ -1,6 +1,6 @@
-const path = require('path');
-const fs = require('fs');
-const webpack = require('webpack');
+const path = require('path')
+const fs = require('fs')
+const webpack = require('webpack')
 
 // Fetch all JSON and TypeScript files in the folder `typescript`
 const entries = fs
@@ -10,7 +10,7 @@ const entries = fs
 	.reduce((acc, fileName) => {
 		acc[fileName] = './core/' + fileName + '.tsx'
 		return acc
-	}, {});
+	}, {})
 
 module.exports = {
 	entry: entries,

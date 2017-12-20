@@ -26,8 +26,8 @@ module.exports = {
 		]
 	},
 	plugins: [
+		// new UglifyJSPlugin({ sourceMap: true }),
 		new webpack.optimize.ModuleConcatenationPlugin,
 		new webpack.optimize.OccurrenceOrderPlugin,
-		new UglifyJSPlugin({ sourceMap: true }),
 	]
 }
