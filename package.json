@@ -18,7 +18,7 @@
     "scripts": {
         "setup": "npm i && npm link platform6-client",
         "build": "webpack --config webpack.config.js",
-        "dev": "npm run build && DEBUG=platform6:* node build/bundle.js",
+        "dev": "npm run build && DEBUG=platform6:* node build/bundle.js"
     },
     "dependencies": {
         "express": "^4.16.2"

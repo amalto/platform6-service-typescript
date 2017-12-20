@@ -9,7 +9,7 @@
     "test": "npm run build && ./node_modules/.bin/ava"
   },
   "dependencies": {
-    "b2portal-ui": "1.9.1-alpha.25",
+    "b2portal-ui": "1.9.4-alpha.18",
     "react": "15.4.2"
   },
   "devDependencies": {
