@@ -3,7 +3,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-import { forms, DynamicComponent } from 'b2portal-ui'
+import { forms, DynamicComponent } from 'platform6-ui'
 
 import { Provider } from 'react-redux'
 import { createStore, Store, combineReducers } from 'redux'

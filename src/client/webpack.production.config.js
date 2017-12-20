@@ -27,7 +27,7 @@ module.exports = {
 		'moment': 'moment',
 		'react': 'React',
 		'react-dom': 'ReactDOM',
-		'b2portal-ui': 'b2portal'
+		'platform6-ui': 'b2portal'
 	},
 	module: {
 		rules: [

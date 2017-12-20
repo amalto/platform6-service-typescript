@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as b2portal from 'b2portal-ui'
+import * as b2portal from 'platform6-ui'
 
 import Interfaces from './Interfaces'
 
