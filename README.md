@@ -17,7 +17,7 @@ For now, you have to use [React](https://reactjs.org/) to develop the client.
 The current example has been developed in React and [TypeScript](https://www.typescriptlang.org/).
 The main file is `ServiceConfiguration.tsx` and all the TypeScript files need to be in the directory `core`.
 
-You don't need the file `ServiceConfiguration.json`. It will be removed in the next releases.
+You don't need the file `ServiceConfiguration.json`, but you should not delete it. It will be removed in the next releases.
 
 Please refer to the documentation of our UI components on https://developers.local:8483/#/documentation.
 
@@ -27,38 +27,38 @@ __Note__: if you don't want to use TypeScript, you will have to update the `src/
 
 ### Build the client
 
-To develop the service's client:
+To develop the service's client.
 
 1. Go in the client's directory
-````console
-cd src/client/
-````
+	````console
+	$ cd src/client/
+	````
 
-2. Install the dependencies
-````console
-npm i
-````
+2.  Install the dependencies
+	````console
+	$ npm i
+	````
 
 3. Compile the TypeScript files to generate a file `ServiceConfiguration.bundle.js` in the directory `src/client/bundle/`
-````console
-npm run build
-````
+	````console
+	$ npm run build
+	````
 
-__Note__: we've added the watch mode to the webpack compilation so that it doesn't need to be manually recompiled after every change.
+__Note__: we've added the watch mode to the webpack compilation so that it does not need to be manually recompiled after every change.
 
 ### Run the server
 
 To start the service's server, go in the root directory.
 
 1. Install the dependencies
-````console
-npm i
-````
+	````console
+	$ npm i
+	````
 
 2. Run the server
-````console
-npm run dev
-````
+	````console
+	$ npm run dev
+	````
 
 It will start a server on port 8000 and it will deploy the service __demo.typescript__ on Platform 6.
 
@@ -71,7 +71,7 @@ This endpoint returns the client's JavaScript bundle `ServiceConfiguration.bundl
 
 Here is an example:
 
-````json 
+````JSON 
 {
     script: '<p>Hello World!</p>',
     data: { 
