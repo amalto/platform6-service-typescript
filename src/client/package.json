@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server -d --config webpack.config.js",
-    "build": "NODE_ENV=production webpack --watch --config  webpack.production.config.js",
+    "build": "NODE_ENV=production webpack --watch --config  webpack.client.config.js",
     "test": "npm run build && ./node_modules/.bin/ava"
   },
   "dependencies": {

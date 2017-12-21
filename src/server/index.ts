@@ -16,7 +16,7 @@ app.get('/apis/v.1.0.0/demo.typescript/portal', async function (request, respons
 	})
 
 	const servicePortal = {
-		script: fs.readFileSync('src/client/bundle/ServiceConfiguration.bundle.js', 'utf8'),
+		script: fs.readFileSync('src/client/build/ServiceConfiguration.bundle.js', 'utf8'),
 		data: {
 			scripts: Service.BusConnection.getHeaderValue(scriptsResponse, Service.Constants.SERVICE_SCRIPTS_ID, 'scriptIds') || {}
 		}
