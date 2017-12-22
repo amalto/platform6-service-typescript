@@ -4,6 +4,3 @@ npm-debug.log
 .vscode/
 node_modules/
 build/
-src/client/build/
-
-

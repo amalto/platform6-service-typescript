@@ -2,7 +2,7 @@
     "name": "demo.typescript",
     "version": "1.0.1",
     "description": "A demo project to show the structure of a Platform 6 service in TypeScript.",
-    "main": "src/server.ts",
+    "main": "./src/server.ts",
     "repository": {
         "type": "git",
         "url": "https://bitbucket.org/amalto/dev-service-typescript"
@@ -16,11 +16,12 @@
     ],
     "private": true,
     "scripts": {
-        "build": "webpack --config webpack.config.js",
-        "dev": "npm run build && DEBUG=platform6:* node build/bundle.js"
+        "build": "webpack",
+        "start": "cross-env DEBUG=platform6:* node build/bundle.js"
     },
     "dependencies": {
         "@platform6/platform6-client": "0.0.1-alpha.5",
+        "cross-env": "^5.1.3",
         "express": "^4.16.2"
     },
     "devDependencies": {

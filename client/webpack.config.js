@@ -2,14 +2,17 @@ const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
 
-// Fetch all JSON and TypeScript files in the folder `typescript`
+const sourceDirectory = './src/'
+// Add a Webpack entry for all JSON and TypeScript files in the folder `sourceDirectory`
 const entries = fs
-	.readdirSync('./core/')
-	.filter(file => file.match(/.*\.json$/))
-	.map(fileName => fileName.replace('.json', ''))
-	.reduce((acc, fileName) => {
-		acc[fileName] = './core/' + fileName + '.tsx'
-		return acc
+	.readdirSync(sourceDirectory)
+	.filter(file => file.match(/\.json$/))
+	// Removing the extension
+	.map(filename => filename.split('.').slice(0, -1).join('.'))
+	.reduce((entries, filename) => {
+		entries[filename] = `${sourceDirectory}${filename}.tsx`
+
+		return entries
 	}, {})
 
 module.exports = {
@@ -19,12 +22,10 @@ module.exports = {
 		path: path.resolve(__dirname, './build')
 	},
 	resolve: {
-		extensions: ['.tsx', '.js', '.json']
+		extensions: ['.tsx', '.ts', '.js', '.json']
 	},
 	externals: {
 		'jquery': 'jQuery',
-		'pikaday': 'Pikaday',
-		'moment': 'moment',
 		'react': 'React',
 		'react-dom': 'ReactDOM',
 		'platform6-ui': 'b2portal'
@@ -43,6 +44,6 @@ module.exports = {
 	},
 	node: { fs: 'empty'},
 	plugins: [
-		new webpack.DefinePlugin({ 'process.env': {'NODE_ENV': 'production'} })
+		new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': 'production' } })
 	]
 };

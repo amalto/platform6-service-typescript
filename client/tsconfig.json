@@ -5,7 +5,8 @@
         "noImplicitAny": false,
         "removeComments": true,
         "outDir": "./generated",
-        "jsx": "react",
+		"jsx": "react",
+		"sourceRoot": "./src",
         "sourceMap": true,
         "experimentalDecorators": true,
         "lib": [
@@ -15,9 +16,5 @@
 			"es7",
 			"es2017"
         ]
-    },
-    "include": [
-		"core/**/*",
-        "typings/**/*"
-    ]
+    }
 }

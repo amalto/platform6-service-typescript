@@ -6,7 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
 	entry: {
-		bundle: './src/server/index.ts'
+		bundle: './src/server.ts'
 	},
 	output: {
 		path: path.resolve(__dirname, './build'),
@@ -16,7 +16,7 @@ module.exports = {
 	target: 'node',
 	devtool: 'source-map',
 	externals: [nodeExternals()],
-	resolve: { extensions: ['.ts', '.js'] },
+	resolve: { extensions: ['.ts', '.js', '.json'] },
 	module: {
 		rules: [
 			{

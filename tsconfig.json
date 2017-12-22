@@ -4,10 +4,10 @@
 		"module": "commonjs",
 		"experimentalDecorators": true,
 		"noImplicitAny": true,
-		"outDir": "build",
+		"outDir": "./generated",
 		"sourceMap": true
 	},
 	"include": [
-		"src/server/**/*.ts"
+		"src/**/*.ts"
 	]
 }
