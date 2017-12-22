@@ -1,91 +1,93 @@
 # Platform6 Node.js Service Demo
-> :beginner: A demo project to show how to develop a **Platform 6** service with Node.js and TypeScript.
 
-## What does this project show?
+> :beginner: A demo project to show how to develop a **Platform 6** service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/).
+
+## What is this demo about?
 
 This project shows how to:
 
-- implement a simple [Node.js](https://nodejs.org/en/) application with the framework [Express](https://expressjs.com/),
-- initialize a service with given parameters,
-- implement the endpoint called by the portal to display the service's client,
-- call another service among an endpoint to get some data
+- create a simple Node.js application server,
+- initialize a custom service on Platform 6,
+- implement the endpoint that display the service's user interface,
+- retrieve some data from another service
 
-## Develop the service's client
+## General notes about the user interface of the service
 
-For now, you have to use [React](https://reactjs.org/) to develop the client.
+The user interface of the service, also called _the client_, has been developed in [React](https://reactjs.org/).
 
-The current example has been developed in React and [TypeScript](https://www.typescriptlang.org/).
-The main file is `ServiceConfiguration.tsx` and all the TypeScript files need to be in the directory `core`.
+> For now Platform 6 only supports the framework React.
+
+The main file is `ServiceConfiguration.tsx` and all the TypeScript files need to be in the directory [`./client/src`](./client/src).
 
 You don't need the file `ServiceConfiguration.json`, but you should not delete it. It will be removed in the next releases.
 
-Please refer to the documentation of our UI components on https://developers.local:8483/#/documentation.
+Please refer to the documentation of our user interface components on http://localhost:8480/#/documentation.
 
-__Note__: if you don't want to use TypeScript, you will have to update the `src/client/webpack.client.config.js` to remove the `ts-loader`.
+> Platform 6 needs to be running to find the documentation.
 
-## Run the project
+## Run the demo
 
 ### Build the client
 
-To develop the service's client.
+1. Go in the client's directory and install its dependencies:
 
-1. Go in the client's directory
-	````console
-	$ cd src/client/
-	````
+```console
+$ cd client
+$ npm install
+```
 
-2.  Install the dependencies
-	````console
-	$ npm i
-	````
+2. Compile the TypeScript source files to generate the compiled bundle file `client/build/ServiceConfiguration.bundle.js`:
 
-3. Compile the TypeScript files to generate a file `ServiceConfiguration.bundle.js` in the directory `src/client/bundle/`
-	````console
-	$ npm run build
-	````
+```console
+$ npm run build
+```
 
-__Note__: we've added the watch mode to the webpack compilation so that it does not need to be manually recompiled after every change.
+> You can also use the watch mode to generate a new bundle file after every change made to the source files. The command is then: `npm run build:watch`.
 
 ### Run the server
 
-To start the service's server, go in the root directory.
+The server is built using the framework [Express](https://expressjs.com/).
+To launch it, go in the root directory.
 
 1. Install the dependencies
-	````console
-	$ npm i
-	````
 
-2. Run the server
-	````console
-	$ npm run dev
-	````
+```console
+$ npm install
+```
 
-It will start a server on port 8000 and it will deploy the service __demo.typescript__ on Platform 6.
+2. Build and run the server
 
-An entry menu _TypeScript_ will appear in the menu.
+```console
+$ npm run build
+$ npm run start
+```
+
+It will launch a server on the port `8000` then deploy the service __demo.typescript__ on Platform 6.
+
+An entry menu _TypeScript_ will appear in the menu of the [Platform 6 portal](http://localhost:8480/).
 
 ![Demo TypeScript entry menu](images/demo_typescript_entry_menu.png)
 
-When you click on it, it will call the endpoint `GET /apis/v.1.0.0/demo.typescript/portal`.
-This endpoint returns the client's JavaScript bundle `ServiceConfiguration.bundle.js` and the data needed for service's initialisation.
+When you click on it, it will call the endpoint `GET /api/v1.0.0/demo.typescript/portal`.
+This endpoint returns the client's JavaScript bundle `ServiceConfiguration.bundle.js` and the data needed to initialize the service.
 
 Here is an example:
 
-````JSON 
+```json
 {
-    script: '<p>Hello World!</p>',
-    data: { 
-        scripts: [ 
-            { name: 'Script 1', appKey: 'ondiflo' }, 
-            { name: 'Script 2', appKey: '' } 
-        ] 
+    "script": "<p>Hello World!</p>",
+    "data": {
+        "scripts": [
+            { "name": "Script 1", "appKey": "ondiflo" },
+            { "name": "Script 2", "appKey": "" }
+        ]
     }
 }
-````
+```
 
-- __script__: the client's JavaScript script (see [Build the client](#build-the-client) for building this file)
-- __data__: an object containing different items 
+- __script__: the compiled source that is used to display the client
+- __data__: an object containing different items
 
-The portal will use this response to display the service's UI.
+The Platform 6 portal will use this response to display the user interface of the service:
 
 ![Demo TypeScript UI](images/demo_typescript_ui.png)
