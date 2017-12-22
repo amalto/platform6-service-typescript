@@ -8,7 +8,7 @@ This project shows how to:
 
 - create a simple Node.js application server,
 - initialize a custom service on Platform 6,
-- implement the endpoint that display the service's user interface,
+- implement the endpoint that displays the service's user interface,
 - retrieve some data from another service
 
 ## General notes about the user interface of the service
@@ -29,14 +29,14 @@ Please refer to the documentation of our user interface components on http://loc
 
 ### Build the client
 
-1. Go in the client's directory and install its dependencies:
+Go in the client's directory and install its dependencies:
 
 ```console
 $ cd client
 $ npm install
 ```
 
-2. Compile the TypeScript source files to generate the compiled bundle file `client/build/ServiceConfiguration.bundle.js`:
+Compile the TypeScript source files to generate the compiled bundle file `client/build/ServiceConfiguration.bundle.js`:
 
 ```console
 $ npm run build
@@ -49,13 +49,13 @@ $ npm run build
 The server is built using the framework [Express](https://expressjs.com/).
 To launch it, go in the root directory.
 
-1. Install the dependencies
+Install the dependencies
 
 ```console
 $ npm install
 ```
 
-2. Build and run the server
+Build and run the server
 
 ```console
 $ npm run build
