@@ -28,7 +28,7 @@ module.exports = {
 		'jquery': 'jQuery',
 		'react': 'React',
 		'react-dom': 'ReactDOM',
-		'platform6-ui': 'b2portal'
+		'@amalto/platform6-ui': 'b2portal'
 	},
 	module: {
 		rules: [

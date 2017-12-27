@@ -21,7 +21,10 @@ The main file is `ServiceConfiguration.tsx` and all the TypeScript files need to
 
 You don't need the file `ServiceConfiguration.json`, but you should not delete it. It will be removed in the next releases.
 
-Please refer to the documentation of our user interface components on http://localhost:8480/#/documentation.
+A set of user interface components is ready for use on Platform 6.
+In order to use them, you will need to add the dependency [`@amalto/platform6-ui`](https://www.npmjs.com/package/@amalto/platform6-ui).
+
+The documentation of the components is available on your local Platform 6: http://localhost:8480/#/documentation.
 
 > Platform 6 needs to be running to find the documentation.
 

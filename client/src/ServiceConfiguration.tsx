@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as Platform6 from 'platform6-ui'
+import * as Platform6 from '@amalto/platform6-ui'
 
 const { reactRedux, DataGrid, DataLine } = Platform6
 
