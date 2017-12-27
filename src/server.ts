@@ -1,4 +1,4 @@
-import Service from '@platform6/platform6-client'
+import Service from '@amalto/platform6-client'
 
 import * as express from 'express'
 import * as fs from 'fs'

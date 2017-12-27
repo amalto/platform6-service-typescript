@@ -1,4 +1,4 @@
-# Platform6 Node.js Service Demo
+# Platform 6 Node.js Service Demo
 
 > :beginner: A demo project to show how to develop a **Platform 6** service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/).
 
