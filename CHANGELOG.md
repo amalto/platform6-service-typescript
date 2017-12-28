@@ -8,9 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Add a MIT license.
+- Add a section _Prerequisite_ in the `README.md`.
 ### Changed
 - Use the packages [@amalto/platform6-client](https://www.npmjs.com/package/@amalto/platform6-client) and [@amalto/platform6-ui](https://www.npmjs.com/package/@amalto/platform6-ui).
 - Conform to [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) format.
+- Update the section _General notes about the user interface of the service_ in the `README.md`.
+- Update the images in the section _How to run the demo?_ in the `README.md`.
+- Update the example of the output of the endpoint `GET /portal` in the `README.md`.
 ### Removed
 - Remove useless dependencies from the client sub-project.
 - Remove the file `ServiceConfiguration.json` from the client sub-project.
