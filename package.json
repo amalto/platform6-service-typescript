@@ -1,6 +1,6 @@
 {
 	"name": "demo.typescript",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A demo project to show the structure of a Platform 6 service in TypeScript.",
 	"license": "MIT",
 	"main": "./src/server.ts",
