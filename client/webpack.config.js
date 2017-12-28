@@ -2,21 +2,10 @@ const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
 
-const sourceDirectory = './src/'
-// Add a Webpack entry for all JSON and TypeScript files in the folder `sourceDirectory`
-const entries = fs
-	.readdirSync(sourceDirectory)
-	.filter(file => file.match(/\.json$/))
-	// Removing the extension
-	.map(filename => filename.split('.').slice(0, -1).join('.'))
-	.reduce((entries, filename) => {
-		entries[filename] = `${sourceDirectory}${filename}.tsx`
-
-		return entries
-	}, {})
-
 module.exports = {
-	entry: entries,
+	entry: {
+		ServiceConfiguration: path.resolve(__dirname, './src/ServiceConfiguration.tsx')
+	},
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, './build')
