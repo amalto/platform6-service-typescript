@@ -23,7 +23,7 @@ This project shows how to:
 
 Every service should have a configuration interface. It is the main screen displayed when a user clicks on the associated entry menu in the [Platform 6 portal]. Here's the configuration interface of our demo service:
 
-![Service's configuration interface](./images/service_configuration_interface_example.png)
+![Service's configuration interface](./images/service_configuration_interface_example.jpg)
 
 This interface is defined in the file [`ServiceConfiguration.tsx`](./client/src/ServiceConfiguration.tsx) which has been developed using the framework [React](https://reactjs.org/).
 
