@@ -1,12 +1,11 @@
 # Platform 6 Node.js Service Demo
 
-> :beginner: A demo project to show how to develop a **Platform 6** service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/) using [Platform 6 Node.js client][platform6-nodejs-client].
-
+> A demo service to show how to develop a **Platform 6** service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/) using [Platform 6 Node.js client][platform6-nodejs-client].
 
 ## Prerequisite
 
+- Launch a local instance of [Platform 6](https://github.com/amalto/platform6-wiki).
 - Read and fulfill the requirements of [Platform 6 Node.js client][platform6-nodejs-client].
-- Launch a local instance of Platform 6.
 
 ## What is this demo about?
 
@@ -21,7 +20,9 @@ This project shows how to:
 
 ### The configuration interface
 
-Every service should have a configuration interface. It is the main screen displayed when a user clicks on the associated entry menu in the [Platform 6 portal]. Here's the configuration interface of our demo service:
+Every service should have a configuration interface.
+It is the main screen displayed when a user clicks on the associated entry menu in the [Platform 6 Portal].
+Here's the configuration interface of our demo service:
 
 ![Service's configuration interface](./images/service_configuration_interface_example.jpg)
 
@@ -30,7 +31,7 @@ This interface is defined in the file [`ServiceConfiguration.tsx`](./client/src/
 > For now React is the only supported library on Platform 6.
 
 The user interface must export a single main React component through a bundled JavaScript file (see [Webpack](https://webpack.js.org/) for bundling and [Babel](https://babeljs.io/) for transpiling).
-This script will be injected and displayed on the [Platform 6 portal].
+This script will be injected and displayed on the _Portal_.
 
 ### Platform 6 UI components
 
@@ -78,7 +79,7 @@ $ npm run start
 
 It should launch a server on the port `8000` then deploy the service __demo.typescript__ on Platform 6.
 
-An entry menu _TypeScript_ should appear in the menu of the [Platform 6 portal].
+An entry menu _TypeScript_ should appear in the menu of the _Portal_.
 
 When you click on it, it should make a request to the endpoint `GET /api/${VERSION}/demo.typescript/portal`.
 This endpoint returns the client's bundled JavaScript file `ServiceConfiguration.bundle.js` that you built [at the previous step](#build-the-user-interface) as well as the data needed to initialize the service.
@@ -150,7 +151,11 @@ Here is an example of the output:
 - __script__: the compiled source that is used to display the configuration interface
 - __data__: an object containing different items
 
-The [Platform 6 portal] will use this response to display the user interface of the service.
+The _Portal_ will use this response to display the user interface of the service.
 
-[platform6-nodejs-client]: https://bitbucket.org/amalto/platform6-client-nodejs#readme
-[Platform 6 portal]: http://localhost:8480/
+[platform6-nodejs-client]: https://github.com/amalto/platform6-client-nodejs
+[Platform 6 Portal]: http://localhost:8480/
+
+## License
+
+MIT © [Amalto Technologies](https://www.amalto.com/)
