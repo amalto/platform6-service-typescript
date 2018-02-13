@@ -77,6 +77,18 @@ $ npm run build
 $ npm run start
 ```
 
+You can also use the watch mode to generate a new bundle file after every change made to the server's code:
+
+```console
+$ npm run build:watch
+```
+
+Simultaneously, in another shell, run the following command line to automatically restart the server after every build:
+
+```console
+$ npm run start:watch
+```
+
 It should launch a server on the port `8000` then deploy the service __demo.typescript__ on Platform 6.
 
 An entry menu _TypeScript_ should appear in the menu of the _Portal_.
