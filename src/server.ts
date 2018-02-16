@@ -4,13 +4,19 @@ import * as express from 'express'
 import * as fs from 'fs'
 
 const app = express()
-const myServiceId = 'demo.typescript'
-const version = require('../package.json').version
-const baseUrl = `/apis/v${version}/`
+
+const packageJson = require('../package.json')
+const myServiceId = packageJson.name
+const version = packageJson.version
+
+const baseUrl = `/api/v${version}`
+const path = `/${myServiceId}${baseUrl}`
 
 let service: Service
 
-app.get(`${baseUrl}demo.typescript/portal`, async function (request, response) {
+const { PermissionsManager } = Service
+
+app.get(`${path}/portal`, async function (request, response) {
 	const scriptsResponse = await service.callService({
 		username: 'admin@amalto.com',
 		receiverId: Service.Constants.SERVICE_SCRIPTS_ID,
@@ -27,13 +33,24 @@ app.get(`${baseUrl}demo.typescript/portal`, async function (request, response) {
 	response.status(200).send(servicePortal)
 })
 
+app.get(`${path}/permissions`, async function (request, response) {
+	const permissions = await PermissionsManager.getUserPermissions(request)
+
+	// Check that the user has the permission 'demo.typescript=read' to receive the permissions
+	if (!PermissionsManager.hasPermissions('Roxane', permissions, [{ feature: myServiceId, action: 'read' }])) {
+		response.status(403).send({ message: `Unauthorized: you need to have the permission "${myServiceId}=read"` })
+	}
+
+	response.status(200).send(permissions)
+})
+
 app.listen(8000, () => {
-	console.log('Example app listening on port 8000!')
+	console.log('Server listening on port 8000!')
 
 	service = new Service({
 		username: 'admin@amalto.com',
 		id: myServiceId,
-		path: baseUrl + myServiceId,
+		path,
 		basePath: 'http://docker.for.mac.localhost:8000',
 		versions: version,
 		ui: {

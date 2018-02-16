@@ -1,7 +1,9 @@
 import * as React from 'react'
 import * as Platform6 from '@amalto/platform6-ui'
 
-const { reactRedux, DataGrid, DataLine } = Platform6
+const { reactRedux, scopesHelpers, ActionButton, DataGrid, DataLine } = Platform6
+
+const myServiceId = 'demo.typescript'
 
 declare namespace ServiceConfiguration {
 	interface Id {
@@ -25,17 +27,39 @@ declare namespace ServiceConfiguration {
 		isEdited?: boolean
 	}
 
+
 	interface Props extends ServiceConfiguration, Platform6.DynamicComponent.CustomProps {
 		data: { scripts: Id[] }
 	}
 
-	interface State {}
+	interface State {
+		permissions: any
+	}
 }
 
 class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, ServiceConfiguration.State> {
+	state = {
+		permissions: null
+	}
+
 	render () {
+		const { permissions } = this.state
+
 		return <div>
 			<h4 className="mgb-15 mgt-15">Hello ! I am a service developed in TypeScript.</h4>
+
+			<div>
+				<p className="mgr-5">Click on the following button to display your permissions:</p>
+				<ActionButton
+					clickAction={() => this.getPermissions()}
+					iconClass='fa fa-key'
+					tooltipText='Read the permissions' />
+				{ permissions && <p>My permissions are: <pre>{JSON.stringify(permissions, null, 2)}</pre></p> }
+			</div>
+				{ scopesHelpers.hasPermission(`${myServiceId}=edit`) && <p>This message is only displayed when you have the permission "edit".</p> }
+			<div>
+
+			</div>
 
 			<p className="mgb-15 mgt-15">For now, I can retrieve the list of items in the <code>Platform6.Scripts</code> service.</p>
 
@@ -87,6 +111,15 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 				readOnly: true
 			}
 		]
+	}
+
+	private getPermissions = (): void => {
+		const { api } = this.props
+
+		api
+			.get(api.endpoints.getUrlOfFeature(myServiceId, '/permissions', 'http://docker.for.mac.localhost:8000'))
+			.then(response => this.setState({ permissions: response }))
+			.catch(this.props.handleErrorDisplay)
 	}
 }
 
