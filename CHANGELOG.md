@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.3.0] - 2018-02-16
 ### Added
 - Add new scripts to implement a watch mode for the server ([#1](https://github.com/amalto/platform6-service-typescript/issues/1)).
 - Create an example to check permissions (client & server) ([#3](https://github.com/amalto/platform6-service-typescript/issues/3)).
@@ -47,7 +49,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Show an example of calling another Platform 6 service.
 - Show an example of an API endpoint to get the service client's script.
 
-[Unreleased]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/HEAD..v1.2.1
+[Unreleased]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/HEAD..v1.3.0
+[1.3.0]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/v1.3.0..v1.2.1
 [1.2.1]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/v1.2.1..v1.2.0
 [1.2.0]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/v1.2.0..v1.1.0
 [1.1.0]: https://bitbucket.org/amalto/dev-service-typescript/branches/compare/v1.1.0..v1.0.1
