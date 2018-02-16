@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Add new scripts to implement a watch mode for the server ([#1](https://github.com/amalto/platform6-service-typescript/issues/1)).
+- Create an example to check permissions (client & server) ([#3](https://github.com/amalto/platform6-service-typescript/issues/3)).
+### Changed
 - Reduce the image _Service Configuration Interface Example_ in the `README.md`.
+- Prevent a user who has a single instance to reconnect to display his service in the Portal ([#2](https://github.com/amalto/platform6-service-typescript/issues/3))
 
 ## [1.2.1] - 2017-12-28
 ### Added

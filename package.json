@@ -24,7 +24,7 @@
 		"release": "./scripts/release.sh"
 	},
 	"dependencies": {
-		"@amalto/platform6-client": "0.0.1-alpha.8",
+		"@amalto/platform6-client": "0.1.0",
 		"cross-env": "latest",
 		"express": "^4.16.2"
 	},
