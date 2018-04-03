@@ -55,7 +55,7 @@ app.listen(8000, () => {
 		versions: version,
 		ui: {
 			visible: true,
-			iconName: 'fa-code',
+			iconName: 'fas fa-code',
 			weight: 30,
 			label: {
 				'en-US': 'TypeScript',
