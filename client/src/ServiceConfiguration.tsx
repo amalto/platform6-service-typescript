@@ -7,8 +7,8 @@ const myServiceId = 'demo.typescript'
 
 declare namespace ServiceConfiguration {
 	interface Id {
-		name: string
 		appKey: string
+		name: string
 	}
 
 	interface Column {
@@ -28,18 +28,28 @@ declare namespace ServiceConfiguration {
 	}
 
 
-	interface Props extends ServiceConfiguration, Platform6.DynamicComponent.CustomProps {
-		data: { scripts: Id[] }
-	}
+	interface Props extends ServiceConfiguration, Platform6.DynamicComponent.CustomProps {}
 
 	interface State {
+		scripts: Id[]
 		permissions: any
 	}
 }
 
 class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, ServiceConfiguration.State> {
 	state = {
+		scripts: [],
 		permissions: null
+	}
+
+	componentWillMount() {
+		const { props } = this
+		const { api } = props
+
+		api
+			.get(api.endpoints.getUrlOfFeature('platform6.scripts', '/scripts'))
+			.then(scripts => this.setState({ scripts }))
+			.catch(props.handleErrorDisplay)
 	}
 
 	render () {
@@ -66,7 +76,7 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 			<DataGrid
 				dataGridId='demo.typescript_datagrid'
 				columnHeaders={this.getColumns()}
-				dataLines={this.renderDataLines(this.props.data.scripts)}
+				dataLines={this.renderDataLines()}
 				noItemsMsg='No scripts founded' />
 		</div>
 	}
@@ -86,7 +96,9 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 		]
 	}
 
-	private renderDataLines = (scripts: ServiceConfiguration.Id[]): JSX.Element[] => {
+	private renderDataLines = (): JSX.Element[] => {
+		const { scripts } = this.state
+
 		if (!scripts) return []
 
 		return scripts.map((script, index) => {
