@@ -26,16 +26,16 @@
 	"dependencies": {
 		"@amalto/platform6-client": "0.1.0",
 		"cross-env": "latest",
-		"express": "^4.16.2"
+		"express": "^4.16.3"
 	},
 	"devDependencies": {
-		"@types/express": "^4.0.39",
-		"@types/node": "^8.0.57",
+		"@types/express": "^4.11.1",
+		"@types/node": "^8.10.2",
 		"nodemon": "latest",
-		"ts-loader": "^3.2.0",
-		"typescript": "^2.6.2",
-		"uglifyjs-webpack-plugin": "^1.1.3",
-		"webpack": "^3.10.0",
-		"webpack-node-externals": "^1.6.0"
+		"ts-loader": "^3.5.0",
+		"typescript": "^2.8.1",
+		"uglifyjs-webpack-plugin": "^1.2.4",
+		"webpack": "^3.11.0",
+		"webpack-node-externals": "^1.7.2"
 	}
 }
