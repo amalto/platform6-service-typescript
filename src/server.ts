@@ -17,20 +17,9 @@ let service: Service
 const { PermissionsManager } = Service
 
 app.get(`${path}/portal`, async function (request, response) {
-	const scriptsResponse = await service.callService({
-		username: 'admin@amalto.com',
-		receiverId: Service.Constants.SERVICE_SCRIPTS_ID,
-		action: 'list'
-	})
-
-	const servicePortal = {
-		script: fs.readFileSync('client/build/ServiceConfiguration.bundle.js', 'utf8'),
-		data: {
-			scripts: Service.BusConnection.getHeaderValue(scriptsResponse, Service.Constants.SERVICE_SCRIPTS_ID, 'scriptIds') || {}
-		}
-	}
-
-	response.status(200).send(servicePortal)
+	response
+		.status(200)
+		.send({ script: fs.readFileSync('client/build/ServiceConfiguration.bundle.js', 'utf8') })
 })
 
 app.get(`${path}/permissions`, async function (request, response) {
