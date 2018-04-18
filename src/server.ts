@@ -9,6 +9,10 @@ import { configure } from './application'
 const app = express()
 const log = debug('demo')
 const server = app
+	.use((req, res, next) => {
+		res.setHeader('Connection', 'close')
+		return next()
+	})
 	.listen(8000, () => {
 		log('Server listening on port 8000.')
 

@@ -10,11 +10,10 @@ const { PermissionsManager } = Service
 
 export function configure (app: express.Express) {
 	return app
-		.get(`${PATH}/portal`, async function (request: express.Request, response: express.Response) {
-			response.status(200)
+		.get(`${PATH}/portal`, function (request: express.Request, response: express.Response) {
 			fs
-				.createReadStream('client/build/ServiceConfiguration.bundle.js', 'utf8')
-				.pipe(response)
+				.createReadStream('client/build/ServiceConfiguration.bundle.js')
+				.pipe(response.status(200))
 		})
 		.get(`${PATH}/permissions`, async function (request: express.Request, response: express.Response) {
 			const permissions = await PermissionsManager.getUserPermissions(request)
