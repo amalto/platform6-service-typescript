@@ -19,8 +19,9 @@
 	"scripts": {
 		"build": "./node_modules/.bin/webpack",
 		"build:watch": "npm run build -- --watch",
-		"start": "cross-env DEBUG=platform6:*,demo node build/bundle.js",
-		"start:watch": "cross-env DEBUG=platform6:*,demo ./node_modules/.bin/nodemon build/bundle.js",
+		"server": "cross-env DEBUG=platform6:*,demo node build/bundle.js",
+		"server:watch": "cross-env DEBUG=platform6:*,demo ./node_modules/.bin/nodemon build/bundle.js",
+		"start": "npm run build && npm run server",
 		"release": "./scripts/release.sh"
 	},
 	"dependencies": {
