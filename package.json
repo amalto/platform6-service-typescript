@@ -19,13 +19,15 @@
 	"scripts": {
 		"build": "./node_modules/.bin/webpack",
 		"build:watch": "npm run build -- --watch",
-		"start": "cross-env DEBUG=platform6:* node build/bundle.js",
-		"start:watch": "cross-env DEBUG=platform6:* ./node_modules/.bin/nodemon build/bundle.js",
+		"start": "cross-env DEBUG=platform6:*,demo node build/bundle.js",
+		"start:watch": "cross-env DEBUG=platform6:*,demo ./node_modules/.bin/nodemon build/bundle.js",
 		"release": "./scripts/release.sh"
 	},
 	"dependencies": {
-		"@amalto/platform6-client": "0.1.0",
+		"@amalto/platform6-client": "0.2.0",
+		"@types/debug": "0.0.30",
 		"cross-env": "latest",
+		"debug": "^3.1.0",
 		"express": "^4.16.3"
 	},
 	"devDependencies": {
