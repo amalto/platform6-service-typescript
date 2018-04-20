@@ -4,7 +4,7 @@
 
 ## Prerequisite
 
-- Launch a local instance of [Platform 6](https://github.com/amalto/platform6-wiki).
+- Launch a local instance of [Platform 6](https://documentation.amalto.com/b2box/master/).
 - Read and fulfill the requirements of [Platform 6 Node.js client][platform6-nodejs-client].
 
 ## What is this demo about?
@@ -86,7 +86,7 @@ $ npm run build:watch
 Simultaneously, in another shell, run the following command line to automatically restart the server after every build:
 
 ```console
-$ npm run start:watch
+$ npm run server:watch
 ```
 
 It should launch a server on the port `8000` then deploy the service __demo.typescript__ on Platform 6.
@@ -94,74 +94,13 @@ It should launch a server on the port `8000` then deploy the service __demo.type
 An entry menu _TypeScript_ should appear in the menu of the _Portal_.
 
 When you click on it, it should make a request to the endpoint `GET /api/${VERSION}/demo.typescript/portal`.
-This endpoint returns the client's bundled JavaScript file `ServiceConfiguration.bundle.js` that you built [at the previous step](#build-the-user-interface) as well as the data needed to initialize the service.
+This endpoint returns the client's bundled JavaScript file `ServiceConfiguration.bundle.js` that you built [at the previous step](#build-the-user-interface).
 
 Here is an example of the output:
 
-```json
-{
-    "script": "/******/ (function(modules) { // webpackBootstrap↵/******/     // The module cache↵/******/     var installedModules = {};↵/******/↵/******/     // The require function↵/******/     function __webpack_require__(moduleId) [...]",
-    "data": {
-        "scripts": [
-            {
-                "appKey": "",
-                "name": "Reporting_Generate_Period_DataSources (reports_auto_upgrade)"
-            },
-            {
-                "appKey": "",
-                "name": "FormProcessor"
-            },
-            {
-                "appKey": "",
-                "name": "Reporting_DataSource_Invoice_count_per_status (reports_auto_upgrade)"
-            },
-            {
-                "appKey": "",
-                "name": "AuthTokenCall"
-            },
-            {
-                "appKey": "",
-                "name": "AWFCall"
-            },
-            {
-                "appKey": "",
-                "name": "WF_Update_Invoice_After_Payment"
-            },
-            {
-                "appKey": "",
-                "name": "Reporting_Generate_All_DataSources (reports_auto_upgrade)"
-            },
-            {
-                "appKey": "",
-                "name": "Imerys Talc - JDE"
-            },
-            {
-                "appKey": "",
-                "name": "EndpointExample"
-            },
-            {
-                "appKey": "",
-                "name": "AWF_CorrectInvoice"
-            },
-            {
-                "appKey": "",
-                "name": "REST_GetForm"
-            },
-            {
-                "appKey": "",
-                "name": "Reporting_DataSource_Split_by_Customer (reports_auto_upgrade)"
-            },
-            {
-                "appKey": "ondiflo",
-                "name": "AuthTokenCall"
-            }
-        ]
-    }
-}
 ```
-
-- __script__: the compiled source that is used to display the configuration interface
-- __data__: an object containing different items
+/******/ (function(modules) { // webpackBootstrap↵/******/     // The module cache↵/******/     var installedModules = {};↵/******/↵/******/     // The require function↵/******/     function __webpack_require__(moduleId) [...]
+```
 
 The _Portal_ will use this response to display the user interface of the service.
 
