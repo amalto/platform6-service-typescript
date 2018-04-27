@@ -13,8 +13,7 @@ This project shows how to:
 
 - create a simple Node.js application server,
 - initialize a custom service on Platform 6,
-- implement the endpoint that displays the service's user interface,
-- retrieve some data from another service
+- implement the endpoint that displays the service's user interface
 
 ## General notes about the user interface of the service
 
@@ -36,9 +35,9 @@ This script will be injected and displayed on the _Portal_.
 ### Platform 6 UI components
 
 To help you build the user interface of your custom service, a set of components is ready for use on Platform 6.
-They can be included as a JavaScript dependency from the package [`@amalto/platform6-ui`](https://www.npmjs.com/package/@amalto/platform6-ui).
+They can be included as a JavaScript dependency from the library [`platform6-ui-components`](https://github.com/amalto/platform6-ui-components).
 
-The list of these components is available and documented on your local instance of Platform 6: http://localhost:8480/#/documentation.
+The documentation of these components is available [online](https://documentation.amalto.com/b2box/master/developer-guide/platform6-ui-components/docs/).
 
 ## How to run the demo?
 
