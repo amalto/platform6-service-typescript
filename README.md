@@ -43,6 +43,12 @@ The documentation of these components is available [online](https://documentatio
 
 ### Build the user interface
 
+Go in the root directory and install the global dependencies:
+
+```console
+$ npm install
+```
+
 Go in the [client's directory](./clients) and install its dependencies:
 
 ```console
