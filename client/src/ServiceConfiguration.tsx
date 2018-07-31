@@ -1,7 +1,11 @@
 import * as React from 'react'
-import * as Platform6 from '@amalto/platform6-ui'
+import * as b2portal from '@amalto/platform6-ui'
+import * as scopesHelpers from '@amalto/scope-helpers'
 
-const { reactRedux, scopesHelpers, ActionButton, DataGrid, DataLine } = Platform6
+const { DataGrid, reactRedux, webStorage } = b2portal
+
+import ActionButton from '@amalto/action-button'
+import DataLine from '@amalto/data-line'
 
 const myServiceId = 'demo.typescript'
 
@@ -28,7 +32,7 @@ declare namespace ServiceConfiguration {
 	}
 
 
-	interface Props extends ServiceConfiguration, Platform6.DynamicComponent.CustomProps {}
+	interface Props extends ServiceConfiguration, b2portal.DynamicComponent.CustomProps {}
 
 	interface State {
 		scripts: Id[]
@@ -66,7 +70,7 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 					tooltipText='Read the permissions' />
 				{ permissions && <p>My permissions are: <pre>{JSON.stringify(permissions, null, 2)}</pre></p> }
 			</div>
-				{ scopesHelpers.hasPermission(`${myServiceId}=edit`) && <p>This message is only displayed when you have the permission "edit".</p> }
+				{ scopesHelpers.hasPermission(webStorage, `${myServiceId}=edit`) && <p>This message is only displayed when you have the permission "edit".</p> }
 			<div>
 
 			</div>
