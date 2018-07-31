@@ -1,6 +1,4 @@
 const path = require('path')
-const fs = require('fs')
-const webpack = require('webpack')
 
 module.exports = {
 	entry: {
@@ -31,8 +29,5 @@ module.exports = {
 			}
 		]
 	},
-	node: { fs: 'empty'},
-	plugins: [
-		new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': 'production' } })
-	]
+	node: { fs: 'empty'}
 };
