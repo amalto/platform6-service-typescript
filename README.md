@@ -4,7 +4,7 @@
 
 ## Prerequisite
 
-- Launch a local instance of [Platform 6](https://documentation.amalto.com/b2box/master/).
+- Launch a local instance of [Platform 6](https://documentation.amalto.com/platform6/master/).
 - Read and fulfill the requirements of [Platform 6 Node.js client][platform6-nodejs-client].
 
 ## What is this demo about?
@@ -37,7 +37,7 @@ This script will be injected and displayed on the _Portal_.
 To help you build the user interface of your custom service, a set of components is ready for use on Platform 6.
 They can be included as a JavaScript dependency from the library [`platform6-ui-components`](https://github.com/amalto/platform6-ui-components).
 
-The documentation of these components is available [online](https://documentation.amalto.com/b2box/master/developer-guide/platform6-ui-components/docs/).
+The documentation of these components is available [online](https://documentation.amalto.com/platform6/master/developer-guide/platform6-ui-components/docs/).
 
 ## How to run the demo?
 
