@@ -12,7 +12,6 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.json']
 	},
 	externals: {
-		'classnames': 'classNames',
 		'jquery': 'jQuery',
 		'react': 'React',
 		'react-dom': 'ReactDOM',
