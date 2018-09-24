@@ -51,7 +51,7 @@ class ServiceConfiguration extends React.Component<ServiceConfiguration.Props, S
 		const { api } = props
 
 		api
-			.get(api.endpoints.getUrlOfFeature('platform6.scripts', '/scripts'))
+			.get(api.endpoints.getUrlOfFeature(myServiceId, '/list/', 'http://docker.for.mac.localhost:8000'), { username: webStorage.user.userEmail })
 			.then(scripts => this.setState({ scripts }))
 			.catch(props.handleErrorDisplay)
 	}

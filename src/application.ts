@@ -1,4 +1,4 @@
-import Service from '@amalto/platform6-client'
+import { BusConnection, PermissionsManager, Constants as ServiceConstants } from '@amalto/platform6-client'
 
 import * as express from 'express'
 import * as fs from 'fs'
@@ -6,7 +6,6 @@ import * as fs from 'fs'
 import { Constants } from './constants'
 
 const { PATH, SERVICE_ID } = Constants
-const { PermissionsManager } = Service
 
 export function configure (app: express.Express) {
 	return app
@@ -24,5 +23,17 @@ export function configure (app: express.Express) {
 			}
 
 			response.status(200).send(permissions)
+		})
+		.get(`${PATH}/list`, async function (request: express.Request, response: express.Response) {
+			// List the existing scripts
+			const scriptResponse = await app.locals.service.callService({
+				username: request.query.username,
+				receiverId: ServiceConstants.SERVICE_SCRIPTS_ID,
+				action: 'list.ids'
+			})
+
+			const scripts = BusConnection.getHeaderValue(scriptResponse, ServiceConstants.PLATFORM6_RESPONSE_VALUE)
+
+			response.status(200).send(scripts)
 		})
 }
