@@ -39,6 +39,17 @@ function onceDeployed(service: any) {
 
 			app.locals.service = service
 
+			const itemAdded = (item: any, member: any, type: any) => {
+				const date = new Date()
+
+				service.callService({
+					receiverId: item.replyTo.substr(4, item.replyTo.length - 1),
+					headers: [['time', `${date.getHours()}:${date.getMinutes()}`]]
+				}, item.id)
+			}
+
+			service.registerListener(itemAdded, () => {})
+
 			configure(app)
 		})
 		.once('close', () => {
