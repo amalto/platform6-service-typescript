@@ -13,7 +13,9 @@ This project shows how to:
 
 - create a simple Node.js application server,
 - initialize a custom service on Platform 6,
-- implement the endpoint that displays the service's user interface
+- implement the endpoint that displays the service's user interface,
+- send a request to a Platform 6 service,
+- listen to any Platform 6 service requests
 
 ## General notes about the user interface of the service
 
@@ -111,6 +113,24 @@ The _Portal_ will use this response to display the user interface of the service
 
 [platform6-nodejs-client]: https://github.com/amalto/platform6-client-nodejs
 [Platform 6 Portal]: http://localhost:8480/
+
+### Exchange messages between services
+
+In this demo project, a listener to Platform 6 requests has been registred and the answer sent back by the _TypeScript_ service has been implemented ([server.ts](src/server.ts#L42-L51)).
+
+Create a script in the Scripts service with the content below.
+
+```groovy
+def commonMessage = [ headers: [ 'question': 'What time is it?' ] ]
+
+print service.request('demo.typescript', commonMessage).headers['time']
+```
+
+Execute the script and you will see the custom service's response.
+
+```groovy
+INFO [root] stdout: 16:31
+```
 
 ## License
 
