@@ -18,7 +18,7 @@ export function configure (app: express.Express) {
 			const permissions = await PermissionsManager.getUserPermissions(request)
 
 			// Check that the user has the permission 'demo.typescript=read' to receive the permissions
-			if (!PermissionsManager.hasPermissions('Roxane', permissions, [{ feature: SERVICE_ID, action: 'read' }])) {
+			if (!PermissionsManager.hasPermissions(app.locals.service.instanceId, permissions, [{ feature: SERVICE_ID, action: 'read' }])) {
 				response.status(403).send({ message: `Unauthorized: you need to have the permission "${SERVICE_ID}=read"` })
 			}
 
