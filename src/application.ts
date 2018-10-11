@@ -17,6 +17,11 @@ export function configure (app: express.Express) {
 		.get(`${PATH}/permissions`, async function (request: express.Request, response: express.Response) {
 			const permissions = await PermissionsManager.getUserPermissions(request)
 
+			// Check that the permissions are correctly retrieved
+			if (permissions.hasOwnProperty('error')) {
+				response.status(401).send({ message: "Unauthorized: you need to have a valid access token to get your permissions." })
+			}
+
 			// Check that the user has the permission 'demo.typescript=read' to receive the permissions
 			if (!PermissionsManager.hasPermissions(app.locals.service.instanceId, permissions, [{ feature: SERVICE_ID, action: 'read' }])) {
 				response.status(403).send({ message: `Unauthorized: you need to have the permission "${SERVICE_ID}=read"` })
