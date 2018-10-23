@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Replace the [@platform6/platform6-connector](https://www.npmjs.com/package/@platform6/platform6-connector) package by the [@amalto/platform6-client](https://www.npmjs.com/package/@amalto/platform6-client) package.
+- Replace the `platform6-client` term by `platform6-connector` in the [`README.md`](./README.md).
+- Update the license (replace _Amalto Technologies_ by _Platform 6_).
+### Fixed
+- List the user's permissions on the instance on which is deployed the service (not a hard coded instance's id).
+- Throw an error if the user's permissions are undefined.
 
 ## [2.1.0] - 2018-10-08
 ### Added
