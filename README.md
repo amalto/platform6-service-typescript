@@ -131,7 +131,7 @@ INFO [root] stdout: 16:31
 
 ## License
 
-MIT © [Amalto Technologies](https://www.amalto.com/)
+MIT © [Platform 6](https://www.platform6.io)
 
 [platform6-connector-nodejs]: https://github.com/amalto/platform6-connector-nodejs
 [Platform 6 Portal]: http://localhost:8480/
