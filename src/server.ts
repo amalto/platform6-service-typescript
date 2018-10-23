@@ -1,7 +1,7 @@
 import * as express from 'express'
 import * as debug from 'debug'
 
-import { deployService } from '@amalto/platform6-client'
+import { deployService } from '@platform6/platform6-connector'
 import { Constants } from './constants'
 import { configure } from './application'
 

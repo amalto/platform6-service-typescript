@@ -6,7 +6,7 @@
 	"main": "./src/server.ts",
 	"repository": {
 		"type": "git",
-		"url": "https://bitbucket.org/amalto/dev-service-typescript"
+		"url": "https://github.com/amalto/platform6-service-typescript"
 	},
 	"author": "Amalto Technologies",
 	"contributors": [
@@ -25,7 +25,7 @@
 		"release": "./scripts/release.sh"
 	},
 	"dependencies": {
-		"@amalto/platform6-client": "2.1.1",
+		"@platform6/platform6-connector": "3.0.1",
 		"@types/debug": "0.0.30",
 		"cross-env": "latest",
 		"debug": "^3.1.0",

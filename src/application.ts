@@ -1,4 +1,4 @@
-import { BusConnection, PermissionsManager, Constants as ServiceConstants } from '@amalto/platform6-client'
+import { BusConnection, PermissionsManager, Constants as ServiceConstants } from '@platform6/platform6-connector'
 
 import * as express from 'express'
 import * as fs from 'fs'
