@@ -1,11 +1,11 @@
 # Platform 6 Node.js Service Demo
 
-> A demo service to show how to develop a **Platform 6** service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/) using [Platform 6 Node.js client][platform6-nodejs-client].
+> A demo service to show how to develop a __Platform 6__ service with [Node.js](https://nodejs.org/en/) and [TypeScript](https://www.typescriptlang.org/) using [Platform 6 Node.js connector][platform6-connector-nodejs].
 
 ## Prerequisite
 
 - Launch a local instance of [Platform 6](https://documentation.amalto.com/platform6/master/).
-- Read and fulfill the requirements of [Platform 6 Node.js client][platform6-nodejs-client].
+- Read and fulfill the requirements of [Platform 6 Node.js connector][platform6-connector-nodejs].
 
 ## What is this demo about?
 
@@ -111,9 +111,6 @@ Here is an example of the output:
 
 The _Portal_ will use this response to display the user interface of the service.
 
-[platform6-nodejs-client]: https://github.com/amalto/platform6-client-nodejs
-[Platform 6 Portal]: http://localhost:8480/
-
 ### Exchange messages between services
 
 In this demo project, a listener to Platform 6 requests has been registred and the answer sent back by the _TypeScript_ service has been implemented ([server.ts](src/server.ts#L42-L51)).
@@ -135,3 +132,7 @@ INFO [root] stdout: 16:31
 ## License
 
 MIT © [Amalto Technologies](https://www.amalto.com/)
+
+[platform6-connector-nodejs]: https://github.com/amalto/platform6-connector-nodejs
+[Platform 6 Portal]: http://localhost:8480/
+
