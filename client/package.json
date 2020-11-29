@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@amalto/action-button": "^1.4.29",
-    "@amalto/data-line": "^1.4.33",
+    "@amalto/data-line": "^1.9.52",
     "@amalto/platform6-ui": "^1.10.0-alpha.8",
     "@amalto/scope-helpers": "^1.5.31",
     "classnames": "^2.2.6",
