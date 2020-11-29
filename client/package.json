@@ -11,7 +11,7 @@
     "@amalto/action-button": "^1.4.29",
     "@amalto/data-line": "^1.4.33",
     "@amalto/platform6-ui": "^1.10.0-alpha.8",
-    "@amalto/scope-helpers": "^1.5.31",
+    "@amalto/scope-helpers": "^1.9.55",
     "classnames": "^2.2.6",
     "cross-env": "^5.1.3",
     "react": "15.4.2"
