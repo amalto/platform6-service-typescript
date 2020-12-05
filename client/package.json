@@ -8,7 +8,7 @@
     "webpack": "../node_modules/.bin/webpack"
   },
   "dependencies": {
-    "@amalto/action-button": "^1.4.29",
+    "@amalto/action-button": "^1.9.17",
     "@amalto/data-line": "^1.9.52",
     "@amalto/platform6-ui": "^1.10.0-alpha.8",
     "@amalto/scope-helpers": "^1.9.55",
