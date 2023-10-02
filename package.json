@@ -28,7 +28,7 @@
 		"@platform6/platform6-connector": "3.0.1",
 		"@types/debug": "0.0.31",
 		"cross-env": "latest",
-		"debug": "^3.1.0",
+		"debug": "^3.2.7",
 		"express": "^4.17.3"
 	},
 	"devDependencies": {
